@@ -3,7 +3,6 @@ package markdown
 import (
 	"fmt"
 	"io"
-	"io/ioutil"
 	"strings"
 )
 
@@ -14,7 +13,7 @@ type Element struct {
 }
 
 func Parse(r io.Reader) (elements []Element, err error) {
-	a, err := ioutil.ReadAll(r)
+	a, err := io.ReadAll(r)
 	if err != nil {
 		return
 	}
